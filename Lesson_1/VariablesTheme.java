@@ -32,7 +32,7 @@ public class VariablesTheme {
         System.out.print("общая стоимость товаров со скидкой = ");
         System.out.println(price - discountPrice);
 
-        // 3. Вывод слова JAVA//
+        // 3. Вывод слова JAVA //
         System.out.println("\n3. Вывод слова JAVA");
         System.out.println("   J    a  v     v  a        ");
         System.out.println("   J   a a  v   v  a a     ");
