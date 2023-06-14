@@ -41,13 +41,23 @@ public class IfElseStatementTheme    {
         System.out.println("Число 2 = " + num2);
 
         // Поиск максимального числа//
-        int maxNum = Math.max(num1, num2);
+        int maxNum;
+        if (num1 > num2) {
+            maxNum = num1;
+        } else {
+            maxNum = num2;
+        }
         System.out.println("Максимальное число = " + maxNum);
         // Поиск минимального числа //
-        int minNum = Math.min(num1, num2);
+        int minNum;
+        if (num1 < num2) {
+            minNum = num1;
+        } else {
+            minNum = num2;
+        }
         System.out.println("Минимальное число = " + minNum);
-        // Проверка равенства чисел//
-        if(num1 == num2) {
+        // Проверка равенства чисел //
+        if (num1 == num2) {
             System.out.println("Число 1 и число 2 равны");
         } else {
             System.out.println("Число 1 и число 2 неравны");
@@ -73,8 +83,6 @@ public class IfElseStatementTheme    {
             }
         }
         
-        
-
         // 4. Поиск одинаковых цифр в числах//
         System.out.println("\n4. Поиск одинаковых цифр в числах");
         int num4 = 123;
@@ -120,14 +128,18 @@ public class IfElseStatementTheme    {
         System.out.println("\n6.Подсчет суммы вклада и начисленных банком %");
         double sumDeposit = 300_000;
         System.out.println("Сумма вклада: " + sumDeposit);
-        double accruedInterest; 
+        double percent;
+        double accruedInterest;
         if (sumDeposit < 100_000) {
-            accruedInterest = sumDeposit * 0.05;
-        } else if (sumDeposit >= 100_000 && sumDeposit <= 300_000) {
-            accruedInterest = sumDeposit * 0.07;
+            percent = 0.05;
+        } else if (sumDeposit <= 300_000) {
+            percent = 0.07;
         } else {
-            accruedInterest = sumDeposit * 0.1;
+            percent = 0.1;
         }
+
+        accruedInterest = sumDeposit * percent;
+
         System.out.println("Начисленные проценты: " + accruedInterest);
         double totalSum = sumDeposit + accruedInterest;
         System.out.println("Итоговая сумма с процентами: " + totalSum);
@@ -177,12 +189,11 @@ public class IfElseStatementTheme    {
         int costPrice = 9000;
 
         int annualProfit = ((averageSales - costPrice) - rentalPrice) * 12;
+
         if (annualProfit > 0) {
             System.out.println("Прибыль за год: +" + annualProfit + " руб.");
-        } else if (annualProfit < 0) {
-            System.out.println("Прибыль за год: " + annualProfit + " руб.");
         } else {
-            System.out.println("Прибыль за год: 0 руб.");
+            System.out.println("Прибыль за год: " + annualProfit + " руб.");
         }
     }
 }
