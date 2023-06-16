@@ -84,15 +84,19 @@ public class IfElseStatementTheme    {
 
         if (ones1 != ones2 && tens1 != tens2 && hundreds1 != hundreds2) {
             System.out.println("Нет одинаковых цифр в одинаковых разрядах.");
-        } else if (ones1 == ones2) {
-            System.out.println("Одинаковая цифра: " + ones1);
-            System.out.println("Номер разряда: единицы");
-        } if (tens1 == tens2) {
-            System.out.println("Одинаковая цифра: " + tens1);
-            System.out.println("Номер разряда: десятки");
-        } if (hundreds1 == hundreds2) {
-            System.out.println("Одинаковая цифра: " + hundreds1);
-            System.out.println("Номер разряда: сотни");
+        } else {
+            if (ones1 == ones2) {
+                System.out.println("Одинаковая цифра: " + ones1);
+                System.out.println("Номер разряда: единицы");
+            }
+            if (tens1 == tens2) {
+                System.out.println("Одинаковая цифра: " + tens1);
+                System.out.println("Номер разряда: десятки");
+            }
+            if (hundreds1 == hundreds2) {
+                System.out.println("Одинаковая цифра: " + hundreds1);
+                System.out.println("Номер разряда: сотни");
+            }
         }
 
         // 5. Определение символа по его коду //
