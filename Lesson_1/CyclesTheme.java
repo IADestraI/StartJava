@@ -19,7 +19,8 @@ public class CyclesTheme {
             number++;
         } while (number <= end);
 
-        System.out.println("В отрезке [" + start + ", " + end + "] сумма четных чисел = " + sumEven + ", а нечетных = " + sumOdd);
+        System.out.println("В отрезке [" + start + ", " + end + "] сумма четных чисел = " + 
+            sumEven + ", а нечетных = " + sumOdd);
 
         // 2.Вывод чисел в порядке убывания
         System.out.println("\n2.Вывод чисел в порядке убывания");
@@ -48,20 +49,20 @@ public class CyclesTheme {
         }
         
         // 3. Вывод реверсивного числа и суммы его цифр
+        System.out.println("");
         System.out.println("\n3. Вывод реверсивного числа и суммы его цифр");
         int number1 = 1234;
-        int reversedNumber = 0;
-        int sumOfDigits = 0;
+        int sumDigits = 0;
 
+        System.out.print("Исходное число в обратном порядке: ");
         while (number1 > 0) {
             int digit = number1 % 10; // Получаем последнюю цифру числа
-            reversedNumber = reversedNumber * 10 + digit; // Формируем число в обратном порядке
-            sumOfDigits += digit; // Суммируем цифры числа
-            number1 = number1 / 10; // Удаляем последнюю цифру числа
+            System.out.print(digit);
+            sumDigits += digit; // Суммируем цифры числа
+            number1 /= 10; // Удаляем последнюю цифру числа
         }
 
-        System.out.println("Число в обратном порядке: " + reversedNumber);
-        System.out.println("Сумма цифр числа: " + sumOfDigits);
+        System.out.println("\nСумма цифр числа: " + sumDigits);
 
         // 4.Вывод чисел в несколько строк
         System.out.println("\n4. Вывод чисел в несколько строк");
@@ -73,7 +74,7 @@ public class CyclesTheme {
         int numbersInLastRow = (end2 - start1) % numbersPerLine;
 
         if (numbersInLastRow > 0) {
-            rows++;
+            rows++; 
         }
 
         int number2 = start1;
@@ -106,19 +107,19 @@ public class CyclesTheme {
         int number3 = 3242592;
         int countTwos = 0;
 
+        System.out.print("В числе: " + number3);
+
         while (number3 > 0) {
-            int digit = number3 % 10;
-            if (digit == 2) {
+            if (number3 % 10 == 2) {
                 countTwos++;
             }
             number3 /= 10;
         }
 
-        System.out.print("В 3242592 ");
         if (countTwos % 2 == 0) {
-            System.out.print("(четное)");
+            System.out.print(" (четное)");
         } else {
-            System.out.print("(нечетное)");
+            System.out.print(" (нечетное)");
         }
         System.out.println(" количество двоек - " + countTwos);
 
@@ -148,7 +149,6 @@ public class CyclesTheme {
 
         System.out.println("\nТретья фигура:");
         
-
         System.out.println("\n7.Отображение ASCII-символов");
 
         // Вывод символов, идущих до цифр и имеющих нечетные коды (DECIMAL от 33 до 47)
@@ -164,7 +164,6 @@ public class CyclesTheme {
             System.out.print((char) code + " ");
         }
         System.out.println();
-
 
         System.out.println("\n10.Отображение ASCII-символов");
         int size = 9;
