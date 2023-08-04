@@ -5,19 +5,19 @@ public class CyclesTheme {
         
         int start = -10;
         int end = 21;
-        int number = start;
+        int num = start;
 
         int sumEven = 0; // Сумма четных чисел
         int sumOdd = 0; // Сумма нечетных чисел
 
         do {
-            if (number % 2 == 0) {
-                sumEven += number; // Если число четное
+            if (num % 2 == 0) {
+                sumEven += num; // Если число четное
             } else {
-                sumOdd += number; // Если число нечетное
+                sumOdd += num; // Если число нечетное
             }
-            number++;
-        } while (number <= end);
+            num++;
+        } while (num <= end);
 
         System.out.println("В отрезке [" + start + ", " + end + "] сумма четных чисел = " + 
             sumEven + ", а нечетных = " + sumOdd);
@@ -51,15 +51,15 @@ public class CyclesTheme {
         // 3. Вывод реверсивного числа и суммы его цифр
         System.out.println("");
         System.out.println("\n3. Вывод реверсивного числа и суммы его цифр");
-        int number1 = 1234;
+        int num4 = 1234;
         int sumDigits = 0;
 
         System.out.print("Исходное число в обратном порядке: ");
-        while (number1 > 0) {
-            int digit = number1 % 10; // Получаем последнюю цифру числа
+        while (num4 > 0) {
+            int digit = num4 % 10; // Получаем последнюю цифру числа
             System.out.print(digit);
             sumDigits += digit; // Суммируем цифры числа
-            number1 /= 10; // Удаляем последнюю цифру числа
+            num4 /= 10; // Удаляем последнюю цифру числа
         }
 
         System.out.println("\nСумма цифр числа: " + sumDigits);
@@ -67,33 +67,33 @@ public class CyclesTheme {
         // 4.Вывод чисел в несколько строк
         System.out.println("\n4. Вывод чисел в несколько строк");
 
-        int start1 = 1;
-        int end2 = 24;
-        int numbersPerLine = 5;
-        int rows = (end2 - start1) / numbersPerLine;
-        int numbersInLastRow = (end2 - start1) % numbersPerLine;
+        start = 1;
+        end = 24;
+        int numPerLine = 5;
+        int rows = (end - start) / numPerLine;
+        int numInLastRow = (end - start) % numPerLine;
 
-        if (numbersInLastRow > 0) {
+        if (numInLastRow > 0) {
             rows++; 
         }
 
-        int number2 = start1;
+        int num5 = start;
         for (int row = 1; row <= rows; row++) {
-            for (int col = 0; col < numbersPerLine; col++) {
-                if (number2 <= end2) {
-                    System.out.printf("%2d", number2);
+            for (int col = 0; col < numPerLine; col++) {
+                if (num5 <= end) {
+                    System.out.printf("%2d", num5);
                 } else {
                     System.out.print("  ");
                 }
-                if (col < numbersPerLine - 1) {
+                if (col < numPerLine - 1) {
                     System.out.print(" ");
                 }
-                number2 += 2;
+                num5 += 2;
             }
             if (row == rows) {
-                for (int i = 0; i < numbersPerLine - numbersInLastRow; i++) {
+                for (int i = 0; i < numPerLine - numInLastRow; i++) {
                     System.out.printf("0");
-                    if (i < numbersPerLine - numbersInLastRow - 1) {
+                    if (i < numPerLine - numInLastRow - 1) {
                         System.out.print(" ");
                     }
                 }
@@ -104,16 +104,16 @@ public class CyclesTheme {
         // 5. Проверка количества двоек числа на четность/нечетность
         System.out.println("\n5. Проверка количества двоек числа на четность/нечетность");
 
-        int number3 = 3242592;
+        int num6 = 3242592;
         int countTwos = 0;
 
-        System.out.print("В числе: " + number3);
+        System.out.print("В числе: " + num6);
 
-        while (number3 > 0) {
-            if (number3 % 10 == 2) {
+        while (num6 > 0) {
+            if (num6 % 10 == 2) {
                 countTwos++;
             }
-            number3 /= 10;
+            num6 /= 10;
         }
 
         if (countTwos % 2 == 0) {
