@@ -20,7 +20,7 @@ public class CyclesTheme {
         } while (num <= end);
 
         System.out.println("В отрезке [" + start + ", " + end + "] сумма четных чисел = " + 
-            sumEven + ", а нечетных = " + sumOdd);
+                sumEven + ", а нечетных = " + sumOdd);
 
         // 2.Вывод чисел в порядке убывания
         System.out.println("\n2.Вывод чисел в порядке убывания");
@@ -49,8 +49,7 @@ public class CyclesTheme {
         }
         
         // 3. Вывод реверсивного числа и суммы его цифр
-        System.out.println("");
-        System.out.println("\n3. Вывод реверсивного числа и суммы его цифр");
+        System.out.println("\n" + "\n3. Вывод реверсивного числа и суммы его цифр");
         int num4 = 1234;
         int sumDigits = 0;
 
@@ -151,28 +150,85 @@ public class CyclesTheme {
         
         System.out.println("\n7.Отображение ASCII-символов");
 
-        // Вывод символов, идущих до цифр и имеющих нечетные коды (DECIMAL от 33 до 47)
-        System.out.print("Odd Codes   ");
-        for (int code = 33; code <= 47; code += 2) {
-            System.out.print((char) code + " ");
-        }
-        System.out.println();
+        // // Вывод символов, идущих до цифр и имеющих нечетные коды (DECIMAL от 33 до 47)
+        // System.out.print("Odd Codes   ");
+        // for (int code = 33; code <= 47; code += 2) {
+        //     System.out.print((char) code + " ");
+        // }
+        // System.out.println();
 
-        // Вывод маленьких английских букв с четными кодами (DECIMAL 97 до 122)
-        System.out.print("Even Codes  ");
-        for (int code = 97; code <= 122; code += 2) {
-            System.out.print((char) code + " ");
-        }
-        System.out.println();
+        // // Вывод маленьких английских букв с четными кодами (DECIMAL 97 до 122)
+        // System.out.print("Even Codes  ");
+        // for (int code = 97; code <= 122; code += 2) {
+        //     System.out.print((char) code + " ");
+        // }
+        // System.out.println();
 
-        System.out.println("\n10.Отображение ASCII-символов");
+        System.out.println("DECIMAL\tCHARACTER");
+
+        for (int i = 0; i <= 47; i++) {
+            char character = (char) i;
+            if (i % 2 == 1) {
+                System.out.printf("%-12d%-12c%n", i, character);
+            }
+        }
+
+        for (int i = 97; i <= 122; i++) {
+            char character = (char) i;
+            if (i % 2 == 0) {
+                System.out.printf("%-12d%-12c%n", i, character);
+            }
+        }
+
+        System.out.println("\n8.Проверка, является ли число палиндромом");
+
+        int num7 = 1234321;
+        int originalNum7 = num7;
+        int reversedNum7 = 0;
+
+        while (num7 > 0) {
+            int digit = num7 % 10;
+            reversedNum7 = reversedNum7 * 10 + digit;
+            num7 /= 10;
+        }
+
+        if (originalNum7 == reversedNum7) {
+            System.out.println("Число " + originalNum7 + " является палиндромом");
+        } else {
+            System.out.println("Число " + originalNum7 + " не является палиндромом");
+        }
+
+        System.out.println("\n9.Проверка, является ли число счастливым");
+        int num9 = 123456; 
+
+        int digit6 = num9 % 10;
+        num9 /= 10;
+        int digit5 = num9 % 10;
+        num9 /= 10;
+        int digit4 = num9 % 10;
+        num9 /= 10;
+        int digit3 = num9 % 10;
+        num9 /= 10;
+        int digit2 = num9 % 10;
+        num9 /= 10;
+        int digit7 = num9 % 10;
+
+        int sumFirstHalf = digit7 + digit2 + digit3;
+        int sumSecondHalf = digit4 + digit5 + digit6;
+
+        System.out.printf("Число %d %s счастливым%n", num9, sumFirstHalf ==
+                sumSecondHalf ? "является" : "не является");
+        System.out.printf("Сумма цифр %d%d%d = %d, а сумма %d%d%d = %d%n",
+                digit7, digit2, digit3, sumFirstHalf, digit4, digit5, digit6, sumSecondHalf);
+
+        System.out.println("\n10.Таблица умножения");
         int size = 9;
 
-        System.out.print(" * |");
+        System.out.print("   |");
         for (int i = 2; i <= size; i++) {
             System.out.printf("%3d", i);
         }
-        System.out.println("\n------------------------------------");
+        System.out.println("\n----------------------------");
 
         // Таблица умножения
         for (int i = 2; i <= size; i++) {
